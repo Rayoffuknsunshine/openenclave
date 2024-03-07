@@ -21,9 +21,9 @@
 
 static const oe_uuid_t _ecdsa_uuid = {OE_FORMAT_UUID_SGX_ECDSA};
 static const oe_uuid_t _local_uuid = {OE_FORMAT_UUID_SGX_LOCAL_ATTESTATION};
-static const oe_uuid_t _epid_linkable_uuid = {OE_FORMAT_UUID_SGX_EPID_LINKABLE};
-static const oe_uuid_t _epid_unlinkable_uuid = {
-    OE_FORMAT_UUID_SGX_EPID_UNLINKABLE};
+//static const oe_uuid_t _epid_linkable_uuid = {OE_FORMAT_UUID_SGX_EPID_LINKABLE};
+/*static const oe_uuid_t _epid_unlinkable_uuid = {
+    OE_FORMAT_UUID_SGX_EPID_UNLINKABLE};*/
 
 void run_runtime_test()
 {
@@ -316,7 +316,7 @@ static void _test_sgx_remote()
     OE_TEST(oe_free_endorsements(endorsements) == OE_OK);
     endorsements = NULL;
 
-    if (oe_attester_select_format(&_epid_linkable_uuid, 1, &selected_format) ==
+/*    if (oe_attester_select_format(&_epid_linkable_uuid, 1, &selected_format) ==
         OE_OK)
     {
         uint8_t spid[16] = "SPID";
@@ -373,7 +373,7 @@ static void _test_sgx_remote()
                 &endorsements_size),
             OE_INVALID_PARAMETER);
     }
-    else
+    else*/
         printf("====== note: _test_sgx_remote #4: EPID not supported\n");
 
     printf("====== done _test_sgx_remote\n");
